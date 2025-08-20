@@ -1,0 +1,27 @@
+$ git init
+$ echo BASE > file
+$ git add .
+$ git commit -m "base: file"
+$ git checkout -b new_branch
+$ git checkout master
+$ echo "Any written from master" > file
+$ git add .
+$ git commit -m "master: changed file"
+$ git checkout new_branch
+$ echo "Any written from new_branch" > file
+$ git add .
+$ git commit -m "new_branch: changed file"
+$ git checkout master
+$ git remote add origin git@github.com:100car/dz_10_2.git
+$ git branch -M main
+$ git push -u origin main
+$ git checkout new_branch
+$ git push -u origin new_branch
+
+$ # New pull reguest in github
+$ # This branch has conflicts that must be resolved
+
+Any written from new_branch
+=======
+Any written from master
+>>>>>>> main
